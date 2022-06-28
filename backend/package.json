@@ -1,16 +1,19 @@
 {
-  "name": "melsurvey-backend",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "backend for survey app",
+  "description": "backend server for the surveys app",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "melwin",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.18.1",
-    "nodemon": "^2.0.18"
+    "express": "^4.17.2",
+    "helmet": "^5.0.2",
+    "joi": "^17.6.0",
+    "morgan": "^1.10.0",
+    "mz": "^2.7.0",
+    "nodemon": "^2.0.15"
   }
 }
