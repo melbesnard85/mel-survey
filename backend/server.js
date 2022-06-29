@@ -21,5 +21,5 @@ app.use('/api', surveyRoutes)
 
 app.listen(port, () => {
   checkDB()
-  console.log(`Server started on port ${port} 🚀`)
+  console.log(`Server started on port ${port}`)
 })
