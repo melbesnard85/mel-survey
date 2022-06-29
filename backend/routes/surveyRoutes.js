@@ -28,6 +28,18 @@ router.get('/:id', async (req, res) => {
   res.send(survey)
 })
 
+// get answers of taken survey
+router.get('/answers/:id', async (req, res) => {
+  const idAnswer = parseInt(req.params.id)
+  const answerList = await readDB('KEY_SURVEY_ANSWER')
+  const answers = answerList.filter((answer) => answer.idSurvey === idAnswer)
+
+  if (!answers)
+    return res.status(404).send('answers with such id does not exist')
+
+  return res.send(answers)
+})
+
 /**
  * get the result of a survey
  * @param: req contains the response of the user on a survey
