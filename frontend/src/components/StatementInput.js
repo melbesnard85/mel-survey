@@ -1,8 +1,4 @@
-/**
- *
- * @param {*} props onChange for input capture and statement is the value input
- * @returns
- */
+//@param {*} props onChange for input capture and statement is the value input
 const StatementInput = (props) => {
   return (
     <div
@@ -10,7 +6,7 @@ const StatementInput = (props) => {
             items-start rounded-3xl border-2 border-baby-blue/30 hover:border-azure/30
             transition-all'
     >
-      <p className='mx-2 mt-1 font-semibold text-xl'>What is your question?</p>
+      <p className='mx-2 mt-1 font-semibold text-xl'>Your question?</p>
       <input
         type='text'
         className='sm:m-4 my-4 p-4 h-13 sm:w-3/5 w-full rounded-xl outline-none'
