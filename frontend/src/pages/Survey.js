@@ -6,7 +6,6 @@ import ResultModal from '../components/ResultModal'
 
 /**
  * Survey taking page
- * @returns
  */
 const Survey = () => {
   //useParams to capture the navigation parameters (idSurvey)
@@ -37,8 +36,12 @@ const Survey = () => {
       }
       setSurveyAnswer(initAnswer)
     })
-  }, [urlParams.idSurvey])
 
+    Get(services.ANSWER_SURVEY, urlParams.idSurvey).then((result) => {
+      setResults(result.data)
+    })
+  }, [urlParams.idSurvey])
+  console.log(results)
   /**
    * a function to verify if all the questions on the survey are answered or not
    * if all answered we show the "show result" button
@@ -60,10 +63,11 @@ const Survey = () => {
    * function to submit the survey answers and get the result
    */
   function createResult() {
-    Post(services.RESULT_SURVEY, surveyAnswer, surveyAnswer.idSurvey).then(
+    Post(services.SEND_SURVEY, surveyAnswer, surveyAnswer.idSurvey).then(
       (result) => {
         //todo: add a modal for the result
         setResults(result.data)
+        alert('sent success!')
       }
     )
   }
@@ -98,17 +102,14 @@ const Survey = () => {
 
       <button
         onClick={getResult}
-        className={`bg-baby-blue px-10 py-4 rounded-2xl m-5 mb-10
+        className='bg-baby-blue px-10 py-4 rounded-2xl m-5 mb-10
                 hover:bg-azure transition-all font-bold text-xl text-white 
-                shadow-lg shadow-baby-blue/50 hover:shadow-azure/40
-                ${isResultAvailable ? '' : 'hidden'}`}
+                shadow-lg shadow-baby-blue/50 hover:shadow-azure/40'
       >
         Result
       </button>
 
-      <p className='w-4/5 m-2 font-bold text-3xl text-center'>
-        You are now taking the survey
-      </p>
+      <p className='w-4/5 m-2 font-bold text-3xl text-center'>taking survey</p>
       <p className='m-2 text-xl font-bold'>{survey?.name}</p>
 
       <div className='my-4 mb-6 w-full mx-auto text-center'>

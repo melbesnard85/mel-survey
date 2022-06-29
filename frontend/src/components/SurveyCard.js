@@ -1,7 +1,5 @@
 /**
  * This is the card that show a survey
- * @param {*} props: onClick action and the name of the survey
- * @returns
  */
 const SurveyCard = (props) => {
   return (

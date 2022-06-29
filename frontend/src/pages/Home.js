@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 /**
  * The home page
- * @returns
  */
 const Home = () => {
   return (

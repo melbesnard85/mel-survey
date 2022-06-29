@@ -5,7 +5,6 @@ import { services, Get } from '../services/crud.services'
 
 /**
  * Survey Browsing page
- * @returns
  */
 const SurveyList = () => {
   //survey list as a state
@@ -39,7 +38,6 @@ const SurveyList = () => {
             name={survey.name}
             key={survey.id}
             onClick={() => {
-              //navigating to survey page with a specified survey id
               navigate(`/survey/${survey.id}`)
             }}
           />

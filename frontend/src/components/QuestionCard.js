@@ -2,8 +2,6 @@ import { useState } from 'react'
 
 /**
  * A question card component displayed in the survey
- * @param {*} props statement is the question and onClick for input capture
- * @returns
  */
 const QuestionCard = (props) => {
   const [isCardAnswered, setIsCardAnswered] = useState(false)

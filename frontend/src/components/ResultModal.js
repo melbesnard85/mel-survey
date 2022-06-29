@@ -2,8 +2,6 @@ import Modal from 'react-modal'
 
 /**
  * This modal shows the result list of the survey taken by a user
- * @param {*} props: results are the list of results of the same taken survey
- * @returns
  */
 const ResultModal = (props) => {
   return (
@@ -16,7 +14,7 @@ const ResultModal = (props) => {
       overlayClassName='fixed inset-0 bg-black/60 sm:backdrop-blur-sm'
     >
       <p className='w-full m-2 mx-auto font-bold sm:text-3xl text-xl text-center'>
-        See how others answered on this survey
+        answers on this survey
       </p>
 
       <div className='w-full text-center'>
@@ -52,7 +50,7 @@ const ResultModal = (props) => {
                 hover:bg-azure transition-all font-bold text-xl text-white  text-center
                 shadow-lg shadow-baby-blue/50 hover:shadow-azure/40'
       >
-        Validate
+        Close
       </button>
     </Modal>
   )
